@@ -292,7 +292,7 @@ public final class PlayerActivity extends Activity {
         qualityLabels.add("Auto (best)");
         qualityUrls.add("");
         List<Models.StreamOption> sorted = new ArrayList<>(s.muxed);
-        sorted.sort((a, b) -> Integer.compare(b.height, a.height));
+        java.util.Collections.sort(sorted, (a, b) -> Integer.compare(b.height, a.height));
         for (Models.StreamOption o : sorted) {
             qualityLabels.add(o.label);
             qualityUrls.add(o.url);

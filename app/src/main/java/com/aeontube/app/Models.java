@@ -69,7 +69,7 @@ public final class Models {
             if (hlsUrl != null && !hlsUrl.isEmpty()) out.add(hlsUrl);
             if (dashUrl != null && !dashUrl.isEmpty()) out.add(dashUrl);
             List<StreamOption> sorted = new ArrayList<>(muxed);
-            sorted.sort((a, b) -> Integer.compare(b.height, a.height));
+            java.util.Collections.sort(sorted, (a, b) -> Integer.compare(b.height, a.height));
             for (StreamOption o : sorted) out.add(o.url);
             return out;
         }

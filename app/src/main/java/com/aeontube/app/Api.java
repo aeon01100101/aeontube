@@ -66,7 +66,7 @@ public final class Api {
     /** Try backends in order (last good first); first success wins and sticks. */
     private <T> T across(Op<T> op) throws Exception {
         List<Backend> order = new ArrayList<>(backends);
-        order.sort((a, b) -> {
+        java.util.Collections.sort(order, (a, b) -> {
             if (a.name().equals(lastGoodName)) return -1;
             if (b.name().equals(lastGoodName)) return 1;
             return 0;
